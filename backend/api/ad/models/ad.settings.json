@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "ads",
+  "info": {
+    "name": "ad"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "ad": {
+      "type": "richtext"
+    }
+  }
+}

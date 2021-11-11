@@ -1,0 +1,41 @@
+{
+  "name": "strapi-starter-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "develop": "next dev",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix"
+  },
+  "dependencies": {
+    "@tailwindcss/line-clamp": "^0.2.2",
+    "@zeit/next-css": "^1.0.1",
+    "axios": "^0.23.0",
+    "moment": "^2.29.1",
+    "next": "^11.0.0",
+    "nprogress": "^0.2.0",
+    "react": "17.0.0",
+    "react-dom": "17.0.0",
+    "react-markdown": "^4.2.2",
+    "react-moment": "^0.9.6",
+    "react-tabs": "^3.2.2",
+    "sass": "^1.43.2",
+    "styled-components": "^5.3.1",
+    "styled-off-canvas": "^1.0.1",
+    "swiper": "^7.0.8"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.3.7",
+    "eslint": "^7.30.0",
+    "eslint-config-next": "^11.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "postcss": "^8.3.9",
+    "prettier": "^2.3.1",
+    "tailwindcss": "^2.2.16"
+  }
+}

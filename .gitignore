@@ -1,0 +1,11 @@
+
+dist
+**/.next
+**/.next/**
+node_modules
+**/node_modules/**
+.env.*
+.DS_Store
+**/frontend/.env
+package-lock.json
+yarn.lock
