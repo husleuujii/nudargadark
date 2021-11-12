@@ -25,7 +25,7 @@ const Nav = ({ categories }) => {
 
   return (
     <StyledOffCanvas isOpen={isOpen} onClose={() => setIsOpen(false)}>
-      <header className="z-50 flex flex-col w-full px-3 py-2 mx-auto bg-black shadow-md lg:py-0 lg:px-0">
+      <header className="z-50 flex flex-col w-full py-2 mx-auto bg-black shadow-md lg:py-0 lg:px-0">
       
         <div className="py-3 lg:bg-gray-900">
           <div className="container flex flex-col flex-wrap items-center justify-between w-full gap-5 px-0 py-1 ">
@@ -38,8 +38,8 @@ const Nav = ({ categories }) => {
                 />
               </a>
             </Link>
-            <ul className="flex hidden w-full gap-3 overflow-auto lg:flex">
-              <li className="px-3 font-bold text-gray-300 rounded hover:text-gray-100">
+            <ul className="flex justify-between hidden w-full gap-3 overflow-auto lg:flex">
+              <li className="font-bold text-gray-300 rounded hover:text-gray-100">
                 <Link href="/">
                   <a>НҮҮР</a>
                 </Link>
@@ -48,7 +48,7 @@ const Nav = ({ categories }) => {
                 return (
                   <li
                     key={category.id}
-                    className="px-3 font-bold text-gray-300 rounded hover:text-gray-100"
+                    className="font-bold text-gray-300 rounded hover:text-gray-100"
                   >
                     <Link
                       as={`/category/${category.slug}`}
