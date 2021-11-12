@@ -30,6 +30,7 @@ function footer({ categories }) {
             
           </a>
           <p className="mt-2 text-sm text-gray-400">{address}</p>
+          <p className="mt-2 text-sm text-gray-400">{phone}</p>
         </div>
         <div className="flex flex-wrap flex-grow text-center md:pl-20 md:mt-0 md:text-left">
           <div className="w-full px-4">
