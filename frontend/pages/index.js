@@ -52,10 +52,10 @@ const Home = ({
                 </div>
                 <div>
                   <h2 className="items-center py-1 mb-4 text-xl font-semibold text-gray-100 border-b-2 border-red-600 ">
-                    Эрүүл мэнд
+                  Сэнсаци
                   </h2>
                   <section class="flex flex-wrap mx-auto">
-                    <CategoryArticle articles={eruulmend} />
+                    <CategoryArticle articles={sensatsi} />
                   </section>
                 </div>
               </div>
@@ -63,26 +63,28 @@ const Home = ({
               <div className="grid grid-cols-1 gap-3 my-10 md:grid-cols-3 ">
                 <div>
                   <h2 className="py-1 mb-4 text-xl font-semibold text-gray-100 border-b-2 border-red-600 text-gray-items-center ">
-                  Орон нутаг
+                 
+Эдийн засаг
                   </h2>
                   <section class="flex flex-wrap mx-auto">
-                    <CategoryArticle articles={oronnutag} />
+                    <CategoryArticle articles={ediinzasag} />
                   </section>
                 </div>
                 <div>
                   <h2 className="items-center py-1 mb-4 text-xl font-semibold text-gray-100 border-b-2 border-red-600 ">
-                  Гадаад мэдээ
+                  
+                  Дэлхий
                   </h2>
                   <section class="flex flex-wrap mx-auto">
-                    <CategoryArticle articles={gadaadmedee} />
+                    <CategoryArticle articles={delhii} />
                   </section>
                 </div>
                 <div>
                   <h2 className="items-center py-1 mb-4 text-xl font-semibold text-gray-100 border-b-2 border-red-600 ">
-                  Бусад
+                  Спорт
                   </h2>
                   <section class="flex flex-wrap mx-auto">
-                    <CategoryArticle articles={busad} />
+                    <CategoryArticle articles={sport} />
                   </section>
                 </div>
               </div>
@@ -101,26 +103,26 @@ export async function getStaticProps() {
     homepage,
     ulstur,
     niigem,
-    eruulmend,
+    sensatsi,
     topList,
     newList,
     ad1,
-    oronnutag,
-    gadaadmedee,
-    busad,
+    ediinzasag,
+    delhii,
+    sport,
   ] = await Promise.all([
     fetchAPI("/articles?_limit=3&featured=true"),
     fetchAPI("/categories"),
     fetchAPI("/homepage"),
-    fetchAPI("/articles?_limit=3&_category=2"),
-    fetchAPI("/articles?_limit=3&_category=3"),
-    fetchAPI("/articles?_limit=3&_category=4"),
+    fetchAPI("/articles?_limit=3&_category=2&_sort=published_at:desc"),
+    fetchAPI("/articles?_limit=3&_category=3&_sort=published_at:desc"),
+    fetchAPI("/articles?_limit=3&_category=7&_sort=published_at:desc"),
     fetchAPI("/articles?_sort=views:desc"),
     fetchAPI("/articles?_sort=published_at:desc"),
     fetchAPI("/ad-1"),
-    fetchAPI("/articles?_limit=3&_category=6"),
-    fetchAPI("/articles?_limit=3&_category=5"),
-    fetchAPI("/articles?_limit=3&_category=7"),
+    fetchAPI("/articles?_limit=3&_category=5&_sort=published_at:desc"),
+    fetchAPI("/articles?_limit=3&_category=6&_sort=published_at:desc"),
+    fetchAPI("/articles?_limit=3&_category=4&_sort=published_at:desc"),
   ])
 
   return {
@@ -130,13 +132,13 @@ export async function getStaticProps() {
       homepage,
       ulstur,
       niigem,
-      eruulmend,
+      sensatsi,
       topList,
       newList,
       ad1,
-      oronnutag,
-      gadaadmedee,
-      busad,
+      ediinzasag,
+      delhii,
+      sport,
     },
     revalidate: 1,
   }
