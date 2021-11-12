@@ -17,13 +17,13 @@ const Home = ({
   homepage,
   ulstur,
   niigem,
-  eruulmend,
+  sensatsi,
   topList,
   newList,
   ad1,
-  oronnutag,
-  gadaadmedee,
-  busad,
+  delhii,
+  ediinzasag,
+  sport,
 }) => {
   return (
     <Layout categories={categories}>
