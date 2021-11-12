@@ -7,7 +7,7 @@ body {
 
 @media (min-device-width : 768px)  {
   .container {
-    width: 850px !important;
+    width: 1100px !important;
   }
 }
 
