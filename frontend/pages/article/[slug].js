@@ -64,7 +64,7 @@ const Article = ({ article, categories, topList, newList }) => {
               <NextImage image={article.image} />
               <div className="my-2" />
               <div
-                className="w-full prose text-gray-200 px-14 my-7"
+                className="w-full px-1 mx-auto prose text-gray-200 my-7"
                
               >
                  <ReactMarkdown
@@ -113,7 +113,7 @@ const Article = ({ article, categories, topList, newList }) => {
             </div>
           </div>
 
-          <div className="flex flex-col w-full mx-8 mx-auto mt-3 mb-4 border-t">
+          <div className="flex flex-col w-full mx-0 mx-auto mt-3 mb-4 border-t md:mx-8">
             <form
               className="w-full max-w-xl px-4 pt-2 rounded"
               onSubmit={sendComment}
@@ -163,18 +163,18 @@ const Article = ({ article, categories, topList, newList }) => {
               </div>
             </form>
             <div className="flex flex-col p-3">
-              <div className="my-4 font-bold">Сэтгэгдэлүүд</div>
+              <div className="my-4 font-bold dark:text-gray-200">Сэтгэгдэлүүд</div>
               {article.comments &&
                 article.comments.map((comment) => (
-                  <div className="flex items-center dark:bg-gray-800">
-                    <div className="flex max-w-lg p-2 antialiased text-black dark:bg-gray-800 dark:text-gray-200">
+                  <div className="flex items-center ">
+                    <div className="flex p-2 antialiased text-black dark:text-gray-200">
                     
                       <div>
                         <div className="bg-gray-600 dark:bg-gray-700 rounded-3xl px-4 pt-2 pb-2.5">
                           <div className="text-sm font-semibold leading-relaxed">
                             {comment.username}
                           </div>
-                          <div className="leading-snug text-gray-100 text-normal md:leading-normal">
+                          <div className="w-64 overflow-auto leading-snug text-gray-100 text-normal md:leading-normal">
                             {comment.description}
                           </div>
                         </div>
