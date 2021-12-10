@@ -64,16 +64,18 @@ const Article = ({ article, categories, topList, newList }) => {
               <NextImage image={article.image} />
               <div className="my-2" />
               <div
-                className="w-full text-gray-200 my-7"
-                style={{
-                  textAlign: "justify",
-                  lineHeight: 1.5,
-                  fontSize: " .9em",
-                  fontWeight: 300,
-                  fontFamily: "Arial,helvetica neue,Helvetica,sans-serif",
-                }}
+                className="w-full text-gray-200 px-14 my-7"
+               
               >
-                <ReactMarkdown source={article.content} escapeHtml={false} />
+                 <ReactMarkdown
+                  transformImageUri={(uri) =>
+                    uri.startsWith("http")
+                      ? uri
+                      : `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${uri}`
+                  }
+                >
+                  {article.content}
+                </ReactMarkdown>
               </div>
               
               <div className="flex items-center gap-2 mt-4">
@@ -192,8 +194,8 @@ const Article = ({ article, categories, topList, newList }) => {
 export async function getServerSideProps({ params }) {
   const articles = await fetchAPI(`/articles?slug=${params.slug}`)
   const categories = await fetchAPI("/categories")
-  const topList = await fetchAPI("/articles?_sort=views:desc")
-  const newList = await fetchAPI("/articles?_sort=published_at:desc")
+  const topList = await fetchAPI("/articles?_sort=views:desc&_limit=10")
+  const newList = await fetchAPI("/articles?_sort=published_at:desc&_limit=10")
 
   return {
     props: {
