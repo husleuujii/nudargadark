@@ -64,7 +64,7 @@ const Article = ({ article, categories, topList, newList }) => {
               <NextImage image={article.image} />
               <div className="my-2" />
               <div
-                className="w-full text-gray-200 px-14 my-7"
+                className="w-full prose text-gray-200 px-14 my-7"
                
               >
                  <ReactMarkdown
