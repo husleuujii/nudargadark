@@ -191,7 +191,7 @@ const Article = ({ article, categories, topList, newList }) => {
   )
 }
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const articles = await fetchAPI(`/articles?slug=${params.slug}`)
   const categories = await fetchAPI("/categories")
   const topList = await fetchAPI("/articles?_sort=views:desc&_limit=10")
@@ -204,21 +204,8 @@ export async function getStaticProps({ params }) {
       topList,
       newList,
     },
-    revalidate: true
   }
 }
 
-export async function getStaticPaths() {
-  const articles = await fetchAPI("/articles")
-
-  return {
-    paths: articles.map((article) => ({
-      params: {
-        slug: article.slug,
-      },
-    })),
-    fallback: false,
-  }
-}
 
 export default Article
