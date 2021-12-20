@@ -36,12 +36,14 @@ const Category = ({ category, categories, newList, topList }) => {
                       href="/article/[slug]"
                     >
                       <a>
-                        <img
-                          src={getStrapiMedia(article.image)}
-                          style={{
-                            objectFit: "cover",
-                          }}
-                        />
+                        {article.image && (
+                          <img
+                            src={getStrapiMedia(article.image)}
+                            style={{
+                              objectFit: "cover",
+                            }}
+                          />
+                        )}
                       </a>
                     </Link>
                   </div>
