@@ -21,7 +21,7 @@ const catArticle = ({ articles }) => {
                   <Link as={`/article/${article.slug}`} href="/article/[slug]">
                     <a>
                       <img
-                        src={getStrapiMedia(article.image.formats.thumbnail)}
+                        src={getStrapiMedia(article.image)}
                         className="w-20 w-full h-16 cover"
                         style={{objectFit:"cover"}}
                       />
