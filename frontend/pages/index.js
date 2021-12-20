@@ -32,64 +32,61 @@ const Home = ({
       <div className="flex flex-col flex-wrap w-full gap-4 lg:flex-nowrap">
         <Articles articles={articles} />
         <div className="">
-              <div className="grid grid-cols-1 gap-3 my-10 md:grid-cols-3 ">
-                <div>
-                  <h2 className="items-center py-1 mb-4 text-xl font-semibold text-gray-100 border-b-2 border-red-600 ">
-                    Улс төр
-                  </h2>
-                  <section class="flex flex-wrap mx-auto">
-                    <CategoryArticle articles={ulstur} />
-                  </section>
-                </div>
-                <div>
-                  <h2 className="items-center py-1 mb-4 mb-5 text-xl font-semibold text-gray-100 border-b-2 border-red-600 ">
-                    Нийгэм
-                  </h2>
-
-                  <section class="flex flex-wrap mx-auto">
-                    <CategoryArticle articles={niigem} />
-                  </section>
-                </div>
-                <div>
-                  <h2 className="items-center py-1 mb-4 text-xl font-semibold text-gray-100 border-b-2 border-red-600 ">
-                  Сэнсаци
-                  </h2>
-                  <section class="flex flex-wrap mx-auto">
-                    <CategoryArticle articles={sensatsi} />
-                  </section>
-                </div>
-              </div>
-              {ad1 && <img className="my-2" src={getStrapiMedia(ad1.ad1)} />}
-              <div className="grid grid-cols-1 gap-3 my-10 md:grid-cols-3 ">
-                <div>
-                  <h2 className="py-1 mb-4 text-xl font-semibold text-gray-100 border-b-2 border-red-600 text-gray-items-center ">
-                 
-Эдийн засаг
-                  </h2>
-                  <section class="flex flex-wrap mx-auto">
-                    <CategoryArticle articles={ediinzasag} />
-                  </section>
-                </div>
-                <div>
-                  <h2 className="items-center py-1 mb-4 text-xl font-semibold text-gray-100 border-b-2 border-red-600 ">
-                  
-                  Дэлхий
-                  </h2>
-                  <section class="flex flex-wrap mx-auto">
-                    <CategoryArticle articles={delhii} />
-                  </section>
-                </div>
-                <div>
-                  <h2 className="items-center py-1 mb-4 text-xl font-semibold text-gray-100 border-b-2 border-red-600 ">
-                  Спорт
-                  </h2>
-                  <section class="flex flex-wrap mx-auto">
-                    <CategoryArticle articles={sport} />
-                  </section>
-                </div>
-              </div>
+          <div className="grid grid-cols-1 gap-3 px-3 my-10 md:grid-cols-3 md:px-0 ">
+            <div>
+              <h2 className="items-center py-1 mb-4 text-xl font-semibold text-gray-100 border-b-2 border-red-600 ">
+                Улс төр
+              </h2>
+              <section class="flex flex-wrap mx-auto">
+                <CategoryArticle articles={ulstur} />
+              </section>
             </div>
+            <div>
+              <h2 className="items-center py-1 mb-4 mb-5 text-xl font-semibold text-gray-100 border-b-2 border-red-600 ">
+                Нийгэм
+              </h2>
 
+              <section class="flex flex-wrap mx-auto">
+                <CategoryArticle articles={niigem} />
+              </section>
+            </div>
+            <div>
+              <h2 className="items-center py-1 mb-4 text-xl font-semibold text-gray-100 border-b-2 border-red-600 ">
+                Сэнсаци
+              </h2>
+              <section class="flex flex-wrap mx-auto">
+                <CategoryArticle articles={sensatsi} />
+              </section>
+            </div>
+          </div>
+          {ad1 && <img className="my-2" src={getStrapiMedia(ad1.ad1)} />}
+          <div className="grid grid-cols-1 gap-3 my-10 md:grid-cols-3 ">
+            <div>
+              <h2 className="py-1 mb-4 text-xl font-semibold text-gray-100 border-b-2 border-red-600 text-gray-items-center ">
+                Эдийн засаг
+              </h2>
+              <section class="flex flex-wrap mx-auto">
+                <CategoryArticle articles={ediinzasag} />
+              </section>
+            </div>
+            <div>
+              <h2 className="items-center py-1 mb-4 text-xl font-semibold text-gray-100 border-b-2 border-red-600 ">
+                Дэлхий
+              </h2>
+              <section class="flex flex-wrap mx-auto">
+                <CategoryArticle articles={delhii} />
+              </section>
+            </div>
+            <div>
+              <h2 className="items-center py-1 mb-4 text-xl font-semibold text-gray-100 border-b-2 border-red-600 ">
+                Спорт
+              </h2>
+              <section class="flex flex-wrap mx-auto">
+                <CategoryArticle articles={sport} />
+              </section>
+            </div>
+          </div>
+        </div>
       </div>
     </Layout>
   )

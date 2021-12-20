@@ -13,38 +13,39 @@ SwiperCore.use([Pagination])
 
 const catArticle = ({ articles }) => {
   moment.locale("mn")
-  
+
   return articles.map((article) => {
     return (
       <div className="flex py-1 border-b" key={article.id}>
-                <div className="w-1/3">
-                  <Link as={`/article/${article.slug}`} href="/article/[slug]">
-                    <a>
-                      <img
-                        src={getStrapiMedia(article.image)}
-                        className="w-20 w-full h-16 cover"
-                        style={{objectFit:"cover"}}
-                      />
-
-                    </a>
-                  </Link>
-                </div>
-                <div className="flex flex-col w-2/3">
-                  <Link as={`/article/${article.slug}`} href="/article/[slug]">
-                    <a>
-                      <h2 className="pl-2 text-sm text-gray-100 line-clamp-3">
-                        {article.title}
-                      </h2>
-                    </a>
-                  </Link>
-                  <span className="pl-2 text-xs text-gray-400">
-                    {
-                      // moment(article.published_at).startOf("day").fromNow()
-                      moment(article.published_at).startOf("hour").fromNow()
-                    }
-                  </span>
-                </div>
-              </div>
+        <div className="w-1/3">
+          <Link as={`/article/${article.slug}`} href="/article/[slug]">
+            <a>
+              {article.image && (
+                <img
+                  src={getStrapiMedia(article.image.formats.thumbnail)}
+                  className="w-full h-16 cover"
+                  style={{ objectFit: "cover" }}
+                />
+              )}
+            </a>
+          </Link>
+        </div>
+        <div className="flex flex-col w-2/3">
+          <Link as={`/article/${article.slug}`} href="/article/[slug]">
+            <a>
+              <h2 className="pl-2 text-sm text-gray-100 line-clamp-3">
+                {article.title}
+              </h2>
+            </a>
+          </Link>
+          <span className="pl-2 text-xs text-gray-400">
+            {
+              // moment(article.published_at).startOf("day").fromNow()
+              moment(article.published_at).startOf("hour").fromNow()
+            }
+          </span>
+        </div>
+      </div>
     )
   })
 }
