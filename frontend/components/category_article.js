@@ -22,7 +22,7 @@ const catArticle = ({ articles }) => {
             <a>
               {article.image && (
                 <img
-                  src={getStrapiMedia(article.image.formats.thumbnail)}
+                  src={getStrapiMedia(article.image)}
                   className="w-full h-16 cover"
                   style={{ objectFit: "cover" }}
                 />
